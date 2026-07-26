@@ -1,0 +1,262 @@
+/* NIKA · AI CREATOR STUDIO — quiet-luxury editorial (Signature Grade palitra)
+   Mobile-first: 390px asosiy maket. Palitra: krem #F5EFE6 · espresso #4A362A ·
+   bej #D8C3A5 · kamel #A97C50 · oltin #C9A227 (maks 5%) · zumrad #1F5C4D */
+
+:root {
+  --cream: #F5EFE6;
+  --beige: #D8C3A5;
+  --camel: #A97C50;
+  --espresso: #4A362A;
+  --gold: #C9A227;
+  --emerald: #1F5C4D;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Montserrat', Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--espresso);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
+
+/* ───────── Tugmalar ───────── */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .04em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all .25s ease;
+}
+.btn-primary {
+  background: var(--espresso);
+  color: var(--cream);
+  border: 1px solid var(--espresso);
+}
+.btn-primary:hover { background: var(--camel); border-color: var(--camel); }
+.btn-ghost {
+  color: var(--espresso);
+  border: 1px solid var(--camel);
+  background: transparent;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--camel); }
+.btn-lg { padding: 18px 40px; font-size: 16px; }
+
+/* ───────── HERO ───────── */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(160deg, #EFE6D8 0%, var(--cream) 55%, #EAE0CF 100%);
+}
+.hero-media { position: absolute; inset: 0; }
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+.hero-img[src] { opacity: 1; }
+/* rasm yuklanganida matn o'qilishi uchun pastdan krem-parda */
+.hero-media::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(245,239,230,.96) 0%, rgba(245,239,230,.75) 30%, rgba(245,239,230,0) 65%);
+}
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 22px 64px;
+}
+.hero-brand {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.hero-brand .dot { color: var(--gold); }
+.hero h1 {
+  font-size: clamp(30px, 7.2vw, 56px);
+  font-weight: 700;
+  max-width: 17ch;
+  margin-bottom: 16px;
+}
+.hero-sub {
+  font-size: 14px;
+  letter-spacing: .06em;
+  color: var(--camel);
+  margin-bottom: 30px;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* ───────── Bo'limlar ───────── */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 22px;
+}
+.section-tint {
+  max-width: none;
+  background: #EFE7D9;
+}
+.section-tint > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.sec-title {
+  font-size: clamp(26px, 5vw, 40px);
+  margin-bottom: 36px;
+  position: relative;
+  padding-bottom: 14px;
+}
+.sec-title::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 56px; height: 1px;
+  background: var(--gold);
+}
+
+/* ───────── Xizmat kartalari ───────── */
+.services { display: grid; gap: 18px; }
+.card {
+  border: 1px solid var(--beige);
+  padding: 26px 24px;
+  background: rgba(255,255,255,.35);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.card:hover { border-color: var(--camel); transform: translateY(-2px); }
+.card h3 { font-size: 20px; margin-bottom: 10px; }
+.card p { font-size: 15px; color: #5d4636; }
+.card .price {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: var(--camel);
+}
+
+/* ───────── Qadamlar ───────── */
+.steps { list-style: none; display: grid; gap: 22px; padding: 12px 0; }
+.steps li { display: flex; gap: 18px; align-items: flex-start; }
+.step-num {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--camel);
+  line-height: 1;
+  min-width: 34px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 6px;
+}
+.steps p { font-size: 15px; max-width: 44ch; }
+
+/* ───────── Portfolio ───────── */
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.filter {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  padding: 9px 18px;
+  background: transparent;
+  color: var(--espresso);
+  border: 1px solid var(--beige);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.filter:hover { border-color: var(--camel); }
+.filter.active { background: var(--espresso); color: var(--cream); border-color: var(--espresso); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tile {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(150deg, #E9DfCE, var(--beige));
+}
+.tile img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease, opacity .5s ease;
+  opacity: 0;
+}
+.tile img[src] { opacity: 1; }
+.tile img.placeholder { display: none; }
+.tile:hover img { transform: scale(1.03); }
+.tile figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 26px 12px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  background: linear-gradient(to top, rgba(245,239,230,.92), rgba(245,239,230,0));
+}
+
+/* ───────── Обо мне ───────── */
+.about { display: grid; gap: 28px; }
+.about-photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(150deg, #E9DFCE, var(--beige));
+  max-width: 420px;
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .5s ease; }
+.about-photo img[src] { opacity: 1; }
+.about-text p { margin-bottom: 14px; max-width: 52ch; }
+
+/* ───────── CTA ───────── */
+.cta-block { text-align: center; padding-top: 88px; padding-bottom: 88px; }
+.cta-block h2 { font-size: clamp(26px, 5.4vw, 42px); margin-bottom: 12px; }
+.cta-block > p { margin-bottom: 28px; color: #5d4636; }
+.cta-b2b {
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: var(--camel);
+}
+
+/* ───────── Footer ───────── */
+.footer {
+  border-top: 1px solid var(--beige);
+  text-align: center;
+  padding: 40px 22px 48px;
+  font-size: 13px;
+  color: #7a6350;
+}
+.footer p { margin-bottom: 6px; }
+.footer-brand { font-weight: 500; letter-spacing: .08em; color: var(--espresso); }
+.footer a { color: var(--camel); text-decoration: none; border-bottom: 1px solid var(--beige); }
+.footer a:hover { color: var(--espresso); border-color: var(--gold); }
+
+/* ───────── Desktop ───────── */
+@media (min-width: 760px) {
+  .services { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr 1fr; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .about { grid-template-columns: 380px 1fr; align-items: center; }
+}
+@media (min-width: 1100px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
