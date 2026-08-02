@@ -154,6 +154,76 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
   color: var(--camel);
 }
 
+/* ───────── AI-kreatorlar galereyasi ───────── */
+.creators-intro {
+  margin: -14px 0 30px;
+  font-size: 15px;
+  color: #5d4636;
+  max-width: 58ch;
+}
+.creators { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.creator {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin: 0;
+  background: linear-gradient(150deg, #E9DFCE, var(--beige));
+}
+.creator img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease, opacity .5s ease;
+  opacity: 0;
+}
+.creator img[src] { opacity: 1; }
+.creator img.placeholder { display: none; }
+.creator:hover img { transform: scale(1.04); }
+.c-name {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 30px 12px 10px;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--espresso);
+  background: linear-gradient(to top, rgba(245,239,230,.94), rgba(245,239,230,0));
+}
+.c-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  z-index: 1;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--gold);
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+
+/* ───────── Format chiplari ───────── */
+.formats { display: flex; flex-wrap: wrap; gap: 10px; }
+.format-chip {
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: .03em;
+  padding: 10px 18px;
+  border: 1px solid var(--beige);
+  border-radius: 999px;
+  background: rgba(255,255,255,.45);
+  transition: border-color .25s ease;
+}
+.format-chip:hover { border-color: var(--camel); }
+.formats-note {
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: var(--camel);
+}
+
+/* Asosiy xizmat kartasi urg'usi */
+.card-featured { border-color: var(--camel); background: rgba(255,255,255,.55); }
+
 /* ───────── Qadamlar ───────── */
 .steps { list-style: none; display: grid; gap: 22px; padding: 12px 0; }
 .steps li { display: flex; gap: 18px; align-items: flex-start; }
@@ -255,8 +325,10 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.2; }
   .services { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr 1fr; }
   .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .creators { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .about { grid-template-columns: 380px 1fr; align-items: center; }
 }
 @media (min-width: 1100px) {
   .grid { grid-template-columns: repeat(4, 1fr); }
+  .creators { grid-template-columns: repeat(4, 1fr); }
 }
